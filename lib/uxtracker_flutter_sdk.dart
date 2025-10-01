@@ -8,11 +8,15 @@ class UxtrackerFlutterSdk {
     return UxtrackerFlutterSdkPlatform.instance.initialize(apiKey: apiKey, setup: setup);
   }
 
-  static Future<void> track({required String event, Map<String, String>? properties}) {
-    return UxtrackerFlutterSdkPlatform.instance.track(event: event, properties: properties);
+  static Future<void> track(String event, {Map<String, dynamic>? properties}) {
+    return UxtrackerFlutterSdkPlatform.instance.track(event, properties: properties);
   }
 
   static Future<void> identify({required String userId}) {
     return UxtrackerFlutterSdkPlatform.instance.identify(userId: userId);
+  }
+
+  static Future<void> reset() {
+    return UxtrackerFlutterSdkPlatform.instance.reset();
   }
 }

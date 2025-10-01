@@ -28,11 +28,15 @@ abstract class UxtrackerFlutterSdkPlatform extends PlatformInterface {
     throw UnimplementedError('initialize() has not been implemented.');
   }
 
-  Future<void> track({required String event, Map<String, String>? properties}) {
-    throw UnimplementedError('track({required String event, Map<String, String>? properties}) has not been implemented.');
+  Future<void> track(String event, {Map<String, dynamic>? properties}) {
+    throw UnimplementedError('track(String event, {Map<String, dynamic>? properties}) has not been implemented.');
   }
 
   Future<void> identify({required String userId}) {
     throw UnimplementedError('identify({required String userId}) has not been implemented.');
+  }
+
+  Future<void> reset() {
+    throw UnimplementedError('reset() has not been implemented.');
   }
 }

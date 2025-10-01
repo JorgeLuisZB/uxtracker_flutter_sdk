@@ -19,7 +19,7 @@ class MethodChannelUxtrackerFlutterSdk extends UxtrackerFlutterSdkPlatform {
   }
 
   @override
-  Future<void> track({required String event, Map<String, String>? properties}) async {
+  Future<void> track(String event, {Map<String, dynamic>? properties}) async {
     await methodChannel.invokeMethod('track', {
       'event': event,
       'properties': properties ?? {},
@@ -31,5 +31,10 @@ class MethodChannelUxtrackerFlutterSdk extends UxtrackerFlutterSdkPlatform {
     await methodChannel.invokeMethod('identify', {
       'userId': userId
     });
+  }
+
+  @override
+  Future<void> reset() async {
+    await methodChannel.invokeMethod('reset');
   }
 }

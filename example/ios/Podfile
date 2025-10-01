@@ -31,7 +31,6 @@ target 'Runner' do
   use_frameworks!
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
-  pod 'UXTrackerSDK', :git => 'git@bitbucket.org:JorgeZB/uxtracker-ios-sdk.git', :tag => '1.0.0'
   target 'RunnerTests' do
     inherit! :search_paths
   end

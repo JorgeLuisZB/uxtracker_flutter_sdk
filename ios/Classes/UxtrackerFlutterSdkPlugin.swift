@@ -29,7 +29,7 @@ public class UxtrackerFlutterSdkPlugin: NSObject, FlutterPlugin {
     case "track":
         if let args = call.arguments as? [String: Any],
                let event = args["event"] as? String,
-               let properties = args["properties"] as? [String: String] {
+               let properties = args["properties"] as? [String: Any] {
                 
                 UXTracker.shared.track(eventName: event, userProperties: properties)
                 
@@ -44,11 +44,13 @@ public class UxtrackerFlutterSdkPlugin: NSObject, FlutterPlugin {
            let userId = args["userId"] as? String {
             
             UXTracker.shared.identify(userId: userId)
-            
             result(nil)
         } else {
             result(FlutterError(code: "INVALID_ARGUMENTS", message: "Missing or invalid arguments for 'identify'", details: nil))
         }
+    case "reset":
+        UXTracker.shared.reset()
+        result(nil)
     default:
       result(FlutterMethodNotImplemented)
     }

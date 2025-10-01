@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
               MaterialButton(
                 child: Text('track event'),
                 onPressed: () async {
-                  await UxtrackerFlutterSdk.track(event: 'Button pressed', properties: {'Action': 'Navigation'});
+                  await UxtrackerFlutterSdk.track('Button pressed', properties: {'Action': 'Navigation'});
                   },
               ),
               MaterialButton(
