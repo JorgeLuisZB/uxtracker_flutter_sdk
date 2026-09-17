@@ -1,13 +1,13 @@
-Copyright © 2025 WZA Group S.A de C.V. All rights reserved.
+Copyright © 2025-2026 WZA Group S.A. de C.V. All rights reserved.
 
-This Software Development Kit (SDK), including all associated source code, binaries, documentation, and resources (collectively, the "SDK"), is licensed by Your Company Name ("Licensor") to the individual or entity ("Licensee") who has entered into a valid commercial agreement with Licensor.
+This Software Development Kit (SDK), including all associated source code, binaries, documentation, and resources (collectively, the "SDK"), is licensed by WZA Group S.A. de C.V. ("Licensor") to the individual or entity ("Licensee") who has entered into a valid commercial agreement with Licensor.
 
 By installing, copying, or otherwise using the SDK, Licensee agrees to be bound by the terms of this License Agreement.
 
 1. LICENSE GRANT
 
 Subject to full payment of applicable fees and compliance with this Agreement, Licensor grants Licensee a limited, non-exclusive, non-transferable, revocable license to:
-  - Integrate the SDK into Licensee’s iOS applications;
+  - Integrate the SDK into Licensee’s Flutter, Android and iOS applications;
   - Use the SDK solely for internal development and distribution of Licensee’s own applications;
   - Distribute applications incorporating the SDK to end-users, provided the SDK is not exposed or made independently available.
 
@@ -45,12 +45,12 @@ IN NO EVENT SHALL LICENSOR BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONS
 
 9. GOVERNING LAW
 
-This License shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to conflict of law principles.
+This License shall be governed by and construed in accordance with the federal laws of the United Mexican States, without regard to conflict of law principles.
 
 10. CONTACT
 
 For licensing, support, or legal inquiries, contact:
 
-WZA Group S.A de C.V
+WZA Group S.A. de C.V.
 Cajeme 1120, Obregón, México
 Email: legal@wzagroup.com
