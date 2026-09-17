@@ -1,25 +1,30 @@
-group = "com.wzagroup.uxtrackersdkflutter.uxtracker_flutter_sdk"
-version = "1.0-SNAPSHOT"
+group = "com.wzagroup.uxtracker.flutter"
+version = "1.0.0-beta.1"
 
 buildscript {
     ext.kotlin_version = "2.1.0"
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
     }
-
     dependencies {
         classpath("com.android.tools.build:gradle:8.9.3")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
 
-allprojects {
+// The native SDK is resolved by the host app, so its repositories are added to every project of the build.
+rootProject.allprojects {
     repositories {
+        // Local development against an unpublished native SDK: set uxtracker.localSdk=true in the app's
+        // android/gradle.properties and run `./gradlew :uxtracker:publishReleasePublicationToMavenLocal`
+        // in uxtracker-android-sdk.
+        if (rootProject.findProperty("uxtracker.localSdk") == "true") {
+            mavenLocal()
+        }
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -27,8 +32,7 @@ apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 
 android {
-    namespace = "com.wzagroup.uxtrackersdkflutter.uxtracker_flutter_sdk"
-
+    namespace = "com.wzagroup.uxtracker.flutter"
     compileSdk = 36
 
     compileOptions {
@@ -37,35 +41,18 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17
+        jvmTarget = "17"
     }
 
     sourceSets {
         main.java.srcDirs += "src/main/kotlin"
-        test.java.srcDirs += "src/test/kotlin"
     }
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 21
     }
+}
 
-    buildTypes {
-        debug {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
-        }
-        release {
-            signingConfig signingConfigs.debug
-            minifyEnabled true // Set to true if you want to obfuscate code
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    dependencies {
-        implementation("com.github.JorgeLuisZB:uxtracker-android-sdk:v0.0.3")
-
-        testImplementation("org.jetbrains.kotlin:kotlin-test")
-        testImplementation("org.mockito:mockito-core:5.0.0")
-    }
+dependencies {
+    implementation("com.github.JorgeLuisZB:uxtracker-android-sdk:1.0.0-beta.1")
 }

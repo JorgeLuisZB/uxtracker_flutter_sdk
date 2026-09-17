@@ -2,19 +2,16 @@ PODS:
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
-  - uxtracker_flutter_sdk (0.0.1):
+  - uxtracker_flutter_sdk (1.0.0-beta.1):
     - Flutter
-    - UXTrackerSDK (~> 0.0.1)
-  - UXTrackerSDK (0.0.1)
+    - UxTrackerSDK (= 1.0.0-beta.1)
+  - UxTrackerSDK (1.0.0-beta.1)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
   - uxtracker_flutter_sdk (from `.symlinks/plugins/uxtracker_flutter_sdk/ios`)
-
-SPEC REPOS:
-  trunk:
-    - UXTrackerSDK
+  - UxTrackerSDK (from `../../../uxtracker-sdk-ios`)
 
 EXTERNAL SOURCES:
   Flutter:
@@ -23,13 +20,15 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/integration_test/ios"
   uxtracker_flutter_sdk:
     :path: ".symlinks/plugins/uxtracker_flutter_sdk/ios"
+  UxTrackerSDK:
+    :path: "../../../uxtracker-sdk-ios"
 
 SPEC CHECKSUMS:
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
   integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
-  uxtracker_flutter_sdk: 15f896859cca2d039d1953d88605fb2677815c89
-  UXTrackerSDK: c465644511f122f6646528e979fbdeac6f77a302
+  uxtracker_flutter_sdk: fb6eee078ab89417695171744823dfafc78b9a97
+  UxTrackerSDK: 165fe650f63e2bf2f4bdc56b81618ac110ff5bd5
 
-PODFILE CHECKSUM: 1857a7cdb7dfafe45f2b0e9a9af44644190f7506
+PODFILE CHECKSUM: c9b9dd231b6041679b0ce6679738403ac5300d55
 
 COCOAPODS: 1.16.2

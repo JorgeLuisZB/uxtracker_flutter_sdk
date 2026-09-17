@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '16.0'
+platform :ios, '13.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
@@ -31,6 +31,8 @@ target 'Runner' do
   use_frameworks!
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+  # Native SDK from the sibling checkout until 1.0.0-beta.1 is tagged.
+  pod 'UxTrackerSDK', :path => '../../../uxtracker-sdk-ios'
   target 'RunnerTests' do
     inherit! :search_paths
   end
